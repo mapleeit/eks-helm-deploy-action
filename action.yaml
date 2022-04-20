@@ -34,7 +34,7 @@ inputs:
     timeout:
         description: 'Timeout for the job.'
         required: true
-        default: '0'
+        default: '5m0s'
     update-deps:
         description: 'Update chart dependencies'
         required: false
