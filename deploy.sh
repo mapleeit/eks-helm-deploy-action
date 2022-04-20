@@ -28,6 +28,9 @@ fi
 if [ -n "$INSTALL" ]; then
     UPGRADE_COMMAND="${UPGRADE_COMMAND} --install"
 fi
+if [ -n "$WAIT" ]; then
+    UPGRADE_COMMAND="${UPGRADE_COMMAND} --wait"
+fi
 UPGRADE_COMMAND="${UPGRADE_COMMAND} ${DEPLOY_NAME} ${DEPLOY_CHART_PATH}"
 echo "Executing: ${DEPS_UPDATE_COMMAND}"
 ${DEPS_UPDATE_COMMAND}
