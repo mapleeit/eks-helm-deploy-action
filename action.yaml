@@ -34,13 +34,17 @@ inputs:
     timeout:
         description: 'Timeout for the job.'
         required: true
-        default: 0
+        default: '0'
     update-deps:
         description: 'Update chart dependencies'
         required: false
         default: "true"
     install:
         description: 'If a release by this name does not already exist, run an install'
+        required: false
+        default: ""
+    wait:
+        description: if set, will wait until all Pods, PVCs, Services, and minimum number of Pods of a Deployment, StatefulSet, or ReplicaSet are in a ready state before marking the release as successful. It will wait for as long as timeout
         required: false
         default: ""
 runs:
@@ -58,3 +62,4 @@ runs:
         TIMEOUT: ${{ inputs.timeout }}
         UPDATE_DEPS: ${{ inputs.update-deps }}
         INSTALL: ${{ inputs.install }}
+        WAIT: ${{ inputs.wait }}
