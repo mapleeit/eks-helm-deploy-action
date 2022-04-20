@@ -21,6 +21,7 @@ Following inputs can be used as `step.with` keys
 | `timeout` | String | time to wait for any individual Kubernetes operation (like Jobs for hooks) (default to `'0'`) |
 | `install` | String | If a release by this name doesn't already exist, run an install. (defaults to `''`) |
 | `wait` | String | if set, will wait until all Pods, PVCs, Services, and minimum number of Pods of a Deployment, StatefulSet, or ReplicaSet are in a ready state before marking the release as successful. It will wait for as long as timeout (defaults to `''`) |
+| `debug` | String | enable verbose output (defaults to `''`) |
 
 
 ## Example usage
@@ -46,4 +47,6 @@ jobs:
         values: key1=value1,key2=value2
         name: release_name
         install: 'true'
+        wait: 'true'
+        debug: 'true'
 ```

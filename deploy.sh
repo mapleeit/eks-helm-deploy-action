@@ -31,6 +31,9 @@ fi
 if [ -n "$WAIT" ]; then
     UPGRADE_COMMAND="${UPGRADE_COMMAND} --wait"
 fi
+if [ -n "$DEBUG" ]; then
+    UPGRADE_COMMAND="${UPGRADE_COMMAND} --debug"
+fi
 UPGRADE_COMMAND="${UPGRADE_COMMAND} ${DEPLOY_NAME} ${DEPLOY_CHART_PATH}"
 echo "Executing: ${DEPS_UPDATE_COMMAND}"
 ${DEPS_UPDATE_COMMAND}
